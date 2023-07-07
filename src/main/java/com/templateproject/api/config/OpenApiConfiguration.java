@@ -17,8 +17,8 @@ public class OpenApiConfiguration {
 
     private Info apiInfo() {
         return new Info()
-                .title("NAME OF YOUR API")
-                .description("DESCRIPTION OF YOUR API")
+                .title("FarWest API")
+                .description("Spring API for the Far West Project")
                 .version("1.0")
                 .contact(apiContact())
                 .license(apiLicence());
