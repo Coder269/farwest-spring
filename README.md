@@ -14,4 +14,4 @@
 
 - Run the application with the following command: `mvn spring-boot:run`
 - You can now go to http://localhost:8080/swagger-ui.html to see the Swagger UI
-- You are now ready to work !
+- You are now ready to work !!
