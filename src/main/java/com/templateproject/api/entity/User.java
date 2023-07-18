@@ -2,6 +2,8 @@ package com.templateproject.api.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class User {
     @Id
@@ -11,6 +13,11 @@ public class User {
     @OneToOne
     @JoinColumn(name = "auth_id", referencedColumnName = "id", nullable = false)
     private Auth auth;
+
+    @OneToMany
+    @JoinTable(name = "user_colonies", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "colony_id"))
+    private List<Colony> colonies;
+
     @Column(nullable = false)
     private String userName;
     @Column(nullable = false)

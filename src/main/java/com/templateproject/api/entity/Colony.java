@@ -15,6 +15,10 @@ public class Colony {
     @Column(nullable = false)
     private String colonyPicture;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
     private Date lastStrike;

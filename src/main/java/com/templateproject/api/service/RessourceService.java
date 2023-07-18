@@ -1,5 +1,11 @@
 package com.templateproject.api.service;
 
-public class RessourceService {
+import com.templateproject.api.entity.Ressource;
 
+public interface RessourceService {
+    Ressource createRessource(Ressource ressource);
+
+    Ressource updateRessource(Ressource ressource);
+
+    Ressource getRessourceOfColony(int colonyId);
 }
