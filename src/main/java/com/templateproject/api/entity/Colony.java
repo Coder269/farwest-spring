@@ -14,6 +14,7 @@ public class Colony {
     private String colonyName;
     @Column(nullable = false)
     private String colonyPicture;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
     private Date lastStrike;
@@ -22,4 +23,6 @@ public class Colony {
         this.colonyName = colonyName;
         this.colonyPicture = colonyPicture;
     }
+
+    public Colony() {}
 }

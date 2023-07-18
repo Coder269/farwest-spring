@@ -7,6 +7,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @OneToOne
+    @JoinColumn(name = "auth_id", referencedColumnName = "id", nullable = false)
+    private Auth auth;
     @Column(nullable = false)
     private String userName;
     @Column(nullable = false)
@@ -18,6 +22,7 @@ public class User {
     @Column(nullable = false)
     private int level;
 
+    public User(){}
     public User(String userName, String email, String avatar, int money, int level) {
         this.userName = userName;
         this.email = email;
