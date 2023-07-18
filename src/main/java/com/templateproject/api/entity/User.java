@@ -18,6 +18,7 @@ public class User {
     @Column(nullable = false)
     private int level;
 
+    public User(){}
     public User(String userName, String email, String avatar, int money, int level) {
         this.userName = userName;
         this.email = email;

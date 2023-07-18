@@ -8,7 +8,12 @@ public class Ressource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
-    private String colonyId;
+    private int id;
+
+    @OneToOne
+    @JoinColumn(name = "colony_id", referencedColumnName = "id")
+    private Colony colony;
+
     @Column(nullable = false)
     private int numberOfCowboy;
     @Column(nullable = false)
@@ -23,6 +28,8 @@ public class Ressource {
     private int forge;
     @Column(nullable = false)
     private int mine;
+
+    public Ressource(){}
 
     public Ressource(int numberOfCowboy, int wood, int iron, int gold, int sawMill, int forge, int mine) {
         this.numberOfCowboy = numberOfCowboy;

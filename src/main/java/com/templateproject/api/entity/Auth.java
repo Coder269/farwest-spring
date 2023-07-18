@@ -13,6 +13,7 @@ public class Auth {
     @Column(nullable = false)
     private String userPassword;
 
+    public Auth() {}
     public Auth(String userId, String userPassword) {
         this.userId = userId;
         this.userPassword = userPassword;
