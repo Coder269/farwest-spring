@@ -7,6 +7,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @OneToOne
+    @JoinColumn(name = "auth_id", referencedColumnName = "id", nullable = false)
+    private Auth auth;
     @Column(nullable = false)
     private String userName;
     @Column(nullable = false)
