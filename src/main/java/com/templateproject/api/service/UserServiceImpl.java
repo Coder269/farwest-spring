@@ -7,38 +7,40 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
 
     @Override
-    public User findUserByUsername(String username){
-        return userRepository.findByUsername(username).orElse(null);
+    public User findUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
     @Override
     @Transactional
-    public void updateUserMoney(int userId, int money){
+    public void updateUserMoney(int userId, int money) {
         userRepository.UpdateUserMoney(userId, money);
     }
 
     @Override
     @Transactional
-    public void updateUserLevel(int userId, int level){
+    public void updateUserLevel(int userId, int level) {
         userRepository.UpdateUserLevel(userId, level);
     }
 
     @Override
-    public User createUser(User user){
+    public User createUser(User user) {
         return userRepository.save(user);
     }
 
     @Override
-    public User updateUser(User user){
+    public User updateUser(User user) {
         return userRepository.save(user);
     }
 
     @Override
-    public void deleteUserById(int id) {userRepository.deleteById(id); }
+    public void deleteUserById(int id) {
+        userRepository.deleteById(id);
+    }
 }

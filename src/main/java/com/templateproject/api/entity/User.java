@@ -15,7 +15,6 @@ public class User {
     private List<Colony> colonies;
     @Column(nullable = false)
     private String username;
-
     @Column(nullable = false)
     private String password;
     @Column(nullable = false, unique = true)
@@ -25,7 +24,9 @@ public class User {
     @Column(nullable = false)
     private int level;
 
-    public User(){}
+    public User(String username2, String passwordHashed) {
+    }
+
     public User(String username, String password, String avatar, int money, int level) {
         this.username = username;
         this.password = password;
