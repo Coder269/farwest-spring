@@ -43,4 +43,10 @@ public class UserServiceImpl implements UserService {
     public void deleteUserById(int id) {
         userRepository.deleteById(id);
     }
+
+    @Override
+    public void deleteUserByUsername(String username) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteUserByUsername'");
+    }
 }
