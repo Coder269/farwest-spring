@@ -2,19 +2,22 @@ package com.templateproject.api.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToOne
-    @JoinColumn(name = "auth_id", referencedColumnName = "id", nullable = false)
-    private Auth auth;
+    @OneToMany
+    @JoinTable(name = "user_colonies", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "colony_id"))
+    private List<Colony> colonies;
     @Column(nullable = false)
-    private String userName;
+    private String username;
+
     @Column(nullable = false)
-    private String email;
+    private String password;
     @Column(nullable = false, unique = true)
     private String avatar;
     @Column(nullable = false)
@@ -23,28 +26,28 @@ public class User {
     private int level;
 
     public User(){}
-    public User(String userName, String email, String avatar, int money, int level) {
-        this.userName = userName;
-        this.email = email;
+    public User(String username, String password, String avatar, int money, int level) {
+        this.username = username;
+        this.password = password;
         this.avatar = avatar;
         this.money = money;
         this.level = level;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAvatar() {
