@@ -11,7 +11,6 @@ import java.util.Optional;
 @Repository
 public interface ColonyRepository extends JpaRepository<Colony, Integer> {
 
-    Optional<Colony> findById(int id);
 
     List<Colony> findAllByUserId(int id);
 

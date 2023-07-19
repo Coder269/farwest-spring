@@ -3,7 +3,8 @@ package com.templateproject.api.service;
 import com.templateproject.api.entity.User;
 
 public interface UserService {
-    User getUserByAuth(String userId);
+
+    User findUserByUsername(String username);
 
     void updateUserMoney(int userId, int money);
 
