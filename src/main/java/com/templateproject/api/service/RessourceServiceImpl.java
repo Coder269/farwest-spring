@@ -32,4 +32,24 @@ public class RessourceServiceImpl implements RessourceService {
         ressourceRepository.UpdateCowboy(colonyId, nbCowboy);
     }
 
+    @Override
+    @Transactional
+    public void updateWood(int colonyId, int wood){
+        ressourceRepository.UpdateWood(colonyId, wood);
+    }
+
+    @Override
+    @Transactional
+    public void updateIron(int colonyId, int iron){
+        ressourceRepository.UpdateIron(colonyId, iron);
+    }
+
+    @Override
+    @Transactional
+    public void updateGold(int colonyId, int gold){
+        ressourceRepository.UpdateGold(colonyId, gold);
+    }
+
+
+
 }

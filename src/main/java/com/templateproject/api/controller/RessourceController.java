@@ -41,4 +41,25 @@ public class RessourceController {
         ressourceService.updateNumberCowboy(id, nbCowboy);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PutMapping("/update-wood/{id}")
+    public ResponseEntity<?> updateWood(@PathVariable("id") int id, @RequestBody int wood)
+    {
+        ressourceService.updateWood(id, wood);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/update-iron/{id}")
+    public ResponseEntity<?> updateIron(@PathVariable("id") int id, @RequestBody int iron)
+    {
+        ressourceService.updateIron(id, iron);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/update-gold/{id}")
+    public ResponseEntity<?> updateGold(@PathVariable("id") int id, @RequestBody int gold)
+    {
+        ressourceService.updateGold(id, gold);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
