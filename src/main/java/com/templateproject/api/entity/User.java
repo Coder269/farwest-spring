@@ -46,6 +46,14 @@ public class User {
         return password;
     }
 
+    public List<Colony> getColonies() {
+        return colonies;
+    }
+
+    public void setColonies(List<Colony> colonies) {
+        this.colonies = colonies;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }

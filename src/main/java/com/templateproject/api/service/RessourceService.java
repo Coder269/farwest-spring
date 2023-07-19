@@ -8,4 +8,6 @@ public interface RessourceService {
     Ressource updateRessource(Ressource ressource);
 
     Ressource getRessourceOfColony(int colonyId);
+
+    void updateNumberCowboy(int colonyId, int nbCowboy);
 }

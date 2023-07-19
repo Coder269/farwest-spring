@@ -4,6 +4,7 @@ import com.templateproject.api.entity.Ressource;
 import com.templateproject.api.repository.RessourceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class RessourceServiceImpl implements RessourceService {
@@ -24,6 +25,11 @@ public class RessourceServiceImpl implements RessourceService {
     @Override
     public Ressource getRessourceOfColony(int colonyId){
         return ressourceRepository.findByColonyId(colonyId).orElse(null);
+    }
+    @Override
+    @Transactional
+    public void updateNumberCowboy(int colonyId, int nbCowboy){
+        ressourceRepository.UpdateCowboy(colonyId, nbCowboy);
     }
 
 }
