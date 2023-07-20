@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-    Optional<User> findByUsername (String userName);
+    User findByUsername(String userName);
 
     @Modifying
     @Query("update User set level = :level where id = :id")
@@ -20,7 +20,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Modifying
     @Query("update User set money = :money where id = :id")
     void UpdateUserMoney(@Param("id") int id, @Param("money") int money);
-
-    void deleteByUsername(String username);
 
 }
