@@ -33,7 +33,4 @@ public class AuthService {
         return false;
     }
 
-    public boolean register(String username, String email, String password, String cpassword) {
-        return false;
-    }
 }
