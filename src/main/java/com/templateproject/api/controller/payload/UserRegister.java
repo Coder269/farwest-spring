@@ -1,4 +1,4 @@
-package com.templateproject.api.controller.entity;
+package com.templateproject.api.controller.payload;
 
 public class UserRegister {
 
