@@ -28,26 +28,44 @@ public class RessourceServiceImpl implements RessourceService {
     }
     @Override
     @Transactional
-    public void updateNumberCowboy(int colonyId, int nbCowboy){
-        ressourceRepository.UpdateCowboy(colonyId, nbCowboy);
+    public void updateNumberCowboy(int ressourceId, int nbCowboy){
+        ressourceRepository.UpdateCowboy(ressourceId, nbCowboy);
     }
 
     @Override
     @Transactional
-    public void updateWood(int colonyId, int wood){
-        ressourceRepository.UpdateWood(colonyId, wood);
+    public void updateWood(int ressourceId, int wood){
+        ressourceRepository.UpdateWood(ressourceId, wood);
     }
 
     @Override
     @Transactional
-    public void updateIron(int colonyId, int iron){
-        ressourceRepository.UpdateIron(colonyId, iron);
+    public void updateIron(int ressourceId, int iron){
+        ressourceRepository.UpdateIron(ressourceId, iron);
     }
 
     @Override
     @Transactional
-    public void updateGold(int colonyId, int gold){
-        ressourceRepository.UpdateGold(colonyId, gold);
+    public void updateGold(int ressourceId, int gold){
+        ressourceRepository.UpdateGold(ressourceId, gold);
+    }
+
+    @Override
+    @Transactional
+    public void updateSawmill(int ressourceId, int sawmill) {
+        ressourceRepository.UpdateSawmill(ressourceId, sawmill);
+    }
+
+    @Override
+    @Transactional
+    public void updateForge(int ressourceId, int forge) {
+        ressourceRepository.UpdateForge(ressourceId, forge);
+    }
+
+    @Override
+    @Transactional
+    public void updateMine(int ressourceId, int mine) {
+        ressourceRepository.UpdateMine(ressourceId, mine);
     }
 
 
