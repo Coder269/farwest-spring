@@ -20,13 +20,22 @@ public class Colony {
     private User user;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
     private Date lastStrike;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date woodLastRecolt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date goldLastRecolt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date ironLastRecolt;
 
     public Colony(String colonyName, String colonyPicture) {
         this.colonyName = colonyName;
         this.colonyPicture = colonyPicture;
     }
 
-    public Colony() {}
+    public Colony() {
+    }
 }
