@@ -18,18 +18,22 @@ public class AuthController {
 
     @PostMapping("/register")
     public String register(@RequestBody UserRegister user) {
-        boolean isRegistered = authService.register(
-                user.getUsername(),
-                user.getPassword(),
+
+      boolean isRegistered = authService.register(user.getUsername(), user.getPassword(),
                 user.getCpassword());
         return isRegistered ? user.getUsername() + " est enregistré " : " enregistrement échoué";
     }
 
     @PostMapping("/login")
     public String login(@RequestBody UserLogin user) {
+
         var isLogin = authService.login(
                 user.getUsername(),
                 user.getPassword());
         return isLogin ? user.getUsername() + " est connecté" : " authentification échouée";
+
+     
+
+
     }
 }
