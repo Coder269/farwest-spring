@@ -17,14 +17,19 @@ public class User {
     private String username;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = true)
     private String avatar;
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int money;
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int level;
 
-    public User(String username2, String passwordHashed) {
+    public User() {
+    }
+
+    public User(String username, String passwordHashed) {
+        this.username = username;
+        this.password = passwordHashed;
     }
 
     public User(String username, String password, String avatar, int money, int level) {
