@@ -38,4 +38,68 @@ public class Colony {
 
     public Colony() {
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getColonyName() {
+        return colonyName;
+    }
+
+    public void setColonyName(String colonyName) {
+        this.colonyName = colonyName;
+    }
+
+    public String getColonyPicture() {
+        return colonyPicture;
+    }
+
+    public void setColonyPicture(String colonyPicture) {
+        this.colonyPicture = colonyPicture;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Date getLastStrike() {
+        return lastStrike;
+    }
+
+    public void setLastStrike(Date lastStrike) {
+        this.lastStrike = lastStrike;
+    }
+
+    public Date getWoodLastRecolt() {
+        return woodLastRecolt;
+    }
+
+    public void setWoodLastRecolt(Date woodLastRecolt) {
+        this.woodLastRecolt = woodLastRecolt;
+    }
+
+    public Date getGoldLastRecolt() {
+        return goldLastRecolt;
+    }
+
+    public void setGoldLastRecolt(Date goldLastRecolt) {
+        this.goldLastRecolt = goldLastRecolt;
+    }
+
+    public Date getIronLastRecolt() {
+        return ironLastRecolt;
+    }
+
+    public void setIronLastRecolt(Date ironLastRecolt) {
+        this.ironLastRecolt = ironLastRecolt;
+    }
 }
