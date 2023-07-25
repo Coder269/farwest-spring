@@ -3,3 +3,6 @@ CREATE DATABASE IF NOT EXISTS `wild_code_west`;
 USE `wild_code_west`;
 
 SELECT * from `user`;
+
+DESCRIBE user;
+

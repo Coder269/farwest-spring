@@ -25,13 +25,13 @@ public class AuthService {
 
     }
 
-    public boolean login(String username, String password) {
-        User user = userRepository.findByUsername(username);
+    public String login(String login, String password) {
+        User user = userRepository.findByUsername(login);
         if (user != null) {
             BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
-            return result.verified;
+            return user.getUsername();
         }
-        return false;
+        return null;
     }
 
 }
