@@ -29,7 +29,11 @@ public class AuthService {
         User user = userRepository.findByUsername(login);
         if (user != null) {
             BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
-            return user.getUsername();
+            if (result.verified)
+                return user.getUsername();
+            else {
+                return null;
+            }
         }
         return null;
     }
