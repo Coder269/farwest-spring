@@ -39,7 +39,7 @@ public class AuthController {
     public ResponseEntity<String> login(HttpServletRequest request, @RequestBody UserLogin user) {
         String userID = authService.login(user.getUsername(), user.getPassword());
         if (userID != null) {
-            request.getSession().setAttribute("Nom du joueur", userID);
+            request.getSession().setAttribute("", userID);
             return new ResponseEntity<>(user.getUsername() + " is connected", HttpStatus.OK);
         } else
             return new ResponseEntity<>("Authentication Failed !", HttpStatus.BAD_REQUEST);

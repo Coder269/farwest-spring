@@ -7,9 +7,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.templateproject.api.entity.User;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-    User findByUsername(String userName);
+    Optional<User> findByUsername(String userName);
 
     @Modifying
     @Query("update User set level = :level where id = :id")

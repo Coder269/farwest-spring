@@ -5,6 +5,8 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.templateproject.api.entity.User;
 import com.templateproject.api.repository.UserRepository;
 
+import java.util.Optional;
+
 @Service
 public class AuthService {
 
@@ -15,7 +17,8 @@ public class AuthService {
     }
 
     public boolean register(String username, String password, String cpassword) {
-        if (password.equals(cpassword)) {
+        Optional<User> newUser = userRepository.findByUsername(username);
+        if (password.equals(cpassword) && !newUser.isPresent()) {
             String passwordHashed = BCrypt.withDefaults().hashToString(BCrypt.MIN_COST, password.toCharArray());
             User user = new User(username, passwordHashed);
             userRepository.save(user);
@@ -26,14 +29,10 @@ public class AuthService {
     }
 
     public String login(String login, String password) {
-        User user = userRepository.findByUsername(login);
-        if (user != null) {
-            BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
-            if (result.verified)
-                return user.getUsername();
-            else {
-                return null;
-            }
+        Optional<User> user = userRepository.findByUsername(login);
+        if (user.isPresent()) {
+            BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), user.get().getPassword());
+            return user.get().getUsername();
         }
         return null;
     }
