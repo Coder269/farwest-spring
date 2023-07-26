@@ -1,6 +1,5 @@
 package com.templateproject.api.controller;
 
-
 import com.templateproject.api.entity.User;
 import com.templateproject.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create-user")
-    public ResponseEntity<?> createUser(@RequestBody User user){
+    public ResponseEntity<?> createUser(@RequestBody User user) {
         return new ResponseEntity<>(userService.createUser(user), HttpStatus.CREATED);
     }
 
@@ -46,5 +45,4 @@ public class UserController {
         userService.updateUserMoney(id, money);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }
