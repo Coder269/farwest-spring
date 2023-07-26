@@ -13,7 +13,8 @@ public class User {
     @OneToMany
     @JoinTable(name = "user_colonies", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "colony_id"))
     private List<Colony> colonies;
-    @Column(nullable = false, unique = true)
+
+    @Column(nullable = false)
     private String username;
     @Column(nullable = false)
     private String password;

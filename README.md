@@ -5,7 +5,7 @@
 - Clone this repository
 - Create a new Branch
 - With MySQL, create the database following your project name (ex: project_name), make sure to have correct access to it.
-- Duplicate the content from src/main/resources/application.properties into src/main/resources/application-dev.properties (create file, it will be ignored by Git)
+- Duplicate the content from src/main/resources/application.properties into src/main/resources/application-dev.properties (create file, it will be ignored by Git).
 - Remove the line `spring.profiles.active=dev` from application-dev.properties
 - Add all your sensitive Datastore credentials to the application-dev.properties file
 - Add the project informations into the src/main/java/com/templateproject/config/OpenApiConfiguration.java file for Swagger information
