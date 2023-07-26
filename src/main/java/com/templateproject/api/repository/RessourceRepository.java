@@ -29,4 +29,16 @@ public interface RessourceRepository extends JpaRepository<Ressource, Integer> {
     @Modifying
     @Query("update Ressource set gold = :gold where id = :id")
     void UpdateGold(@Param("id") int id, @Param("gold") int gold);
+
+    @Modifying
+    @Query("update Ressource set sawMill = :sawmill where id = :id")
+    void UpdateSawmill(@Param("id") int id, @Param("sawmill") int sawmill);
+
+    @Modifying
+    @Query("update Ressource set mine = :mine where id = :id")
+    void UpdateMine(@Param("id") int id, @Param("mine") int mine);
+
+    @Modifying
+    @Query("update Ressource set forge = :forge where id = :id")
+    void UpdateForge(@Param("id") int id, @Param("forge") int forge);
 }

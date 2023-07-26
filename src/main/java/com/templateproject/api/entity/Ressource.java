@@ -41,6 +41,22 @@ public class Ressource {
         this.mine = mine;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Colony getColony() {
+        return colony;
+    }
+
+    public void setColony(Colony colony) {
+        this.colony = colony;
+    }
+
     public int getNumberOfCowboy() {
         return numberOfCowboy;
     }

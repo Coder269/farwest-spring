@@ -10,14 +10,24 @@ public interface RessourceService {
 
     Ressource getRessourceOfColony(int colonyId);
 
-    void updateNumberCowboy(int colonyId, int nbCowboy);
+    @Transactional
+    void updateNumberCowboy(int ressourceId, int nbCowboy);
 
     @Transactional
-    void updateWood(int colonyId, int wood);
+    void updateWood(int ressourceId, int wood);
 
     @Transactional
-    void updateIron(int colonyId, int iron);
+    void updateIron(int ressourceId, int iron);
 
     @Transactional
-    void updateGold(int colonyId, int gold);
+    void updateGold(int ressourceId, int gold);
+
+    @Transactional
+    void updateSawmill(int ressourceId, int sawmill);
+
+    @Transactional
+    void updateForge(int ressourceId, int forge);
+
+    @Transactional
+    void updateMine(int ressourceId, int mine);
 }
