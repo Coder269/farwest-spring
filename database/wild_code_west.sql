@@ -4,5 +4,5 @@ USE `wild_code_west`;
 
 SELECT * from `user`;
 
-DESCRIBE user;
+
 
