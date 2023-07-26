@@ -83,4 +83,5 @@ public class RessourceController {
         ressourceService.updateMine(id, mine);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 }
