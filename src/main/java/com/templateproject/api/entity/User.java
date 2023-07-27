@@ -19,11 +19,11 @@ public class User {
     @Column(nullable = false)
     private String password;
     @Column(nullable = true)
-    private String avatar;
+    private String avatar = "../../assets/cowboy1.png";
     @Column(nullable = true)
-    private int money;
+    private int money = 1000;
     @Column(nullable = true)
-    private int level;
+    private int level = 1;
 
     public User() {
     }
@@ -33,12 +33,12 @@ public class User {
         this.password = passwordHashed;
     }
 
-    public User(String username, String password, String avatar, int money, int level) {
-        this.username = username;
-        this.password = password;
-        this.avatar = avatar;
-        this.money = money;
-        this.level = level;
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
