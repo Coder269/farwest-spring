@@ -38,5 +38,8 @@ public class ColonyServiceImpl implements ColonyService {
         return colonyRepository.findAllByUserId(userId);
     }
 
-
+    @Override
+    public Colony getColonyById(int id) {
+        return colonyRepository.findById(id).orElse(null);
+    }
 }

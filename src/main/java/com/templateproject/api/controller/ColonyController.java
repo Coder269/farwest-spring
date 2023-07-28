@@ -39,5 +39,9 @@ public class ColonyController {
     public ResponseEntity<?> getColoniesOfUser(@PathVariable("id") int id) {
         return new ResponseEntity<>(colonyService.getAllColoniesOfUser(id), HttpStatus.OK);
     }
+    @GetMapping("/colony/{id}")
+    public ResponseEntity<?> getColonyById(@PathVariable("id") int id) {
+        return new ResponseEntity<>(colonyService.getColonyById(id), HttpStatus.OK);
+    }
 
 }

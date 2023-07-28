@@ -18,6 +18,7 @@ public class AuthService {
 
     public boolean register(String username, String password, String cpassword) {
         Optional<User> newUser = userRepository.findByUsername(username);
+
         if (password.equals(cpassword) && !newUser.isPresent()) {
             String passwordHashed = BCrypt.withDefaults().hashToString(BCrypt.MIN_COST, password.toCharArray());
             User user = new User(username, passwordHashed);

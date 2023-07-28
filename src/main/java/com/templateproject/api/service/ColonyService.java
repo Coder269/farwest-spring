@@ -14,4 +14,6 @@ public interface ColonyService {
     List<Colony> getAllColonies();
 
     List<Colony> getAllColoniesOfUser(int id);
+
+    Colony getColonyById(int id);
 }
