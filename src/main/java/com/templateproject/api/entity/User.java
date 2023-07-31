@@ -19,7 +19,7 @@ public class User {
     @Column(nullable = false)
     private String password;
     @Column(nullable = true)
-    private String avatar = "../../assets/cowboy1.png";
+    private String avatar;
     @Column(nullable = true)
     private int money = 1000;
     @Column(nullable = true)
