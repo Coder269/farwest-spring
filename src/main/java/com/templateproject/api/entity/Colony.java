@@ -19,17 +19,13 @@ public class Colony {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastStrike;
+    private double lastStrike;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date woodLastRecolt;
+    private double woodLastRecolt;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date goldLastRecolt;
+    private double goldLastRecolt;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date ironLastRecolt;
+    private double ironLastRecolt;
 
     public Colony(String colonyName, String colonyPicture) {
         this.colonyName = colonyName;
@@ -71,35 +67,35 @@ public class Colony {
         this.user = user;
     }
 
-    public Date getLastStrike() {
+    public double getLastStrike() {
         return lastStrike;
     }
 
-    public void setLastStrike(Date lastStrike) {
+    public void setLastStrike(double lastStrike) {
         this.lastStrike = lastStrike;
     }
 
-    public Date getWoodLastRecolt() {
+    public double getWoodLastRecolt() {
         return woodLastRecolt;
     }
 
-    public void setWoodLastRecolt(Date woodLastRecolt) {
+    public void setWoodLastRecolt(double woodLastRecolt) {
         this.woodLastRecolt = woodLastRecolt;
     }
 
-    public Date getGoldLastRecolt() {
+    public double getGoldLastRecolt() {
         return goldLastRecolt;
     }
 
-    public void setGoldLastRecolt(Date goldLastRecolt) {
+    public void setGoldLastRecolt(double goldLastRecolt) {
         this.goldLastRecolt = goldLastRecolt;
     }
 
-    public Date getIronLastRecolt() {
+    public double getIronLastRecolt() {
         return ironLastRecolt;
     }
 
-    public void setIronLastRecolt(Date ironLastRecolt) {
+    public void setIronLastRecolt(double ironLastRecolt) {
         this.ironLastRecolt = ironLastRecolt;
     }
 }
