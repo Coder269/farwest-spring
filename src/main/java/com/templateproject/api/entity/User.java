@@ -15,7 +15,7 @@ public class User {
     @Column(nullable = true)
     private String avatar;
     @Column(nullable = true)
-    private int money = 1000;
+    private int money = 10000;
     @Column(nullable = true)
     private int level = 1;
 
