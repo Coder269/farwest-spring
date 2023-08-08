@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -48,5 +50,10 @@ public class UserServiceImpl implements UserService {
     public void deleteUserByUsername(String username) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteUserByUsername'");
+    }
+
+    @Override
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 }

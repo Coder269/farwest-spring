@@ -46,4 +46,9 @@ public class UserController {
         userService.updateUserMoney(id, money);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/all-users")
+    public ResponseEntity<?> getAllUsers(){
+        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+    }
 }
