@@ -2,6 +2,8 @@ package com.templateproject.api.service;
 
 import com.templateproject.api.entity.User;
 
+import java.util.List;
+
 public interface UserService {
 
     User findUserByUsername(String username);
@@ -17,4 +19,6 @@ public interface UserService {
     void deleteUserById(int id);
 
     void deleteUserByUsername(String username);
+
+    List<User> getAllUsers();
 }
