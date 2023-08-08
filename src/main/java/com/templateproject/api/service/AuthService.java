@@ -33,7 +33,9 @@ public class AuthService {
         Optional<User> user = userRepository.findByUsername(login);
         if (user.isPresent()) {
             BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), user.get().getPassword());
+            if (result.verified)
             return user.get().getUsername();
+            else return null;
         }
         return null;
     }
