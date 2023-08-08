@@ -1,7 +1,5 @@
 package com.templateproject.api.entity;
 
-import java.util.Date;
-
 import jakarta.persistence.*;
 
 @Entity

@@ -2,8 +2,6 @@ package com.templateproject.api.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class User {
     @Id
