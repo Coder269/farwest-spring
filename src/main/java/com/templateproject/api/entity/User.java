@@ -10,10 +10,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToMany
-    @JoinTable(name = "user_colonies", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "colony_id"))
-    private List<Colony> colonies;
-
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
@@ -51,14 +47,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public List<Colony> getColonies() {
-        return colonies;
-    }
-
-    public void setColonies(List<Colony> colonies) {
-        this.colonies = colonies;
     }
 
     public void setPassword(String password) {
